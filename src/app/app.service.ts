@@ -22,23 +22,23 @@ export class AppService {
 
 
   getGeoPosition(lat: number, lng: number): Observable<any> {
-    const url = `http://dataservice.accuweather.com/locations/v1/cities/geoposition/search`;
+    const url = `https://dataservice.accuweather.com/locations/v1/cities/geoposition/search`;
     return this.getRequest(url, `${lat},${lng}`);
   }
 
   getAutoComplete(key: string): Observable<any> {
-    const url = `http://dataservice.accuweather.com/locations/v1/cities/autocomplete`;
+    const url = `https://dataservice.accuweather.com/locations/v1/cities/autocomplete`;
     return this.getRequest(url, `${key}`);
   }
 
   get5DaysOfForecasts(key: string): Observable<any> {
-    const url = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}`;
+    const url = `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${key}`;
     return this.getRequest(url);
   }
 
 
   getCurrentConditions(key: string): Observable<any> {
-    const url = `http://dataservice.accuweather.com/currentconditions/v1/${key}`;
+    const url = `https://dataservice.accuweather.com/currentconditions/v1/${key}`;
     return this.getRequest(url);
   }
 }
